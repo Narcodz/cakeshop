@@ -7,6 +7,7 @@ import AddButton from "../components/AddButton";
 import Featured from "../components/Featured";
 import CakeList from "../components/CakeList";
 import styles from "../styles/Home.module.css";
+const { REACT_APP_API_ENDPOINT } = process.env;
 
 export default function Home({ cakeList, admin }) {
   const [close, setClose] = useState(true);
@@ -33,7 +34,7 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products");
+  const res = await axios.get(`${REACT_APP_API_ENDPOINT}/api/products`);
   return {
     props: {
       cakeList: res.data,
