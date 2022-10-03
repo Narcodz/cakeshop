@@ -34,6 +34,10 @@ export const getServerSideProps = async (ctx) => {
     admin = true;
   }
 
+  process.on('unhandledRejection', reason => {
+    throw reason;
+  });
+
   const res = await axios.get(`${REACT_APP_API_ENDPOINT}/api/products`);
   return {
     props: {
@@ -41,4 +45,5 @@ export const getServerSideProps = async (ctx) => {
       admin,
     },
   };
+  
 };
