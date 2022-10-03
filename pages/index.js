@@ -45,5 +45,4 @@ export const getServerSideProps = async (ctx) => {
       admin,
     },
   };
-  
 };
