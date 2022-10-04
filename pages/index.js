@@ -37,7 +37,7 @@ export const getServerSideProps = async (ctx) => {
     throw reason;
   });
 
-  const res = await axios.get(`${REACT_APP_API_ENDPOINT}/api/products`);
+  const res = await axios.get(`https://cakeshop-xxc9-j4yeaw7th-narcodz.vercel.app/api/products`);
   return {
     props: {
       cakeList: res.data,
