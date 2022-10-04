@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "../styles/Add.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
-const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+const {  REACT_APP_PROD_URL } = process.env;
 
 const Add = ({ setClose }) => {
   const [file, setFile] = useState(null);

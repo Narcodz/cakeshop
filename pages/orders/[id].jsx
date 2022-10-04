@@ -1,7 +1,7 @@
 import styles from "../../styles/Order.module.css";
 import Image from "next/image";
 import axios from "axios";
-const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+const {  REACT_APP_PROD_URL } = process.env;
 
 const Order = ({ order }) => {
   const status = order.status;

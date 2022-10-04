@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../redux/cartSlice";
-const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+const { REACT_APP_PROD_URL } = process.env;
 
 const Product = ({ cake }) => {
   const [price, setPrice] = useState(cake.prices[0]);

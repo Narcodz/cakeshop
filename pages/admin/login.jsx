@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../../styles/Login.module.css";
-const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
+const {  REACT_APP_PROD_URL } = process.env;
 
 const Login = () => {
   const [username, setUsername] = useState(null);
