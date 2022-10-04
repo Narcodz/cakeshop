@@ -7,6 +7,7 @@ import Featured from "../components/Featured";
 import CakeList from "../components/CakeList";
 import styles from "../styles/Home.module.css";
 const { REACT_APP_API_ENDPOINT } = process.env;
+const { REACT_APP_PROD_URL } = process.env;
 
 export default function Home({ cakeList, admin }) {
   const [close, setClose] = useState(true);
