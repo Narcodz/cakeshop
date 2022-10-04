@@ -2,7 +2,7 @@ import axios from "axios";
 import Image from "next/image";
 import { useState } from "react";
 import styles from "../../styles/Admin.module.css";
-const { REACT_APP_API_ENDPOINT } = process.env;
+const { REACT_APP_DEV_URL, REACT_APP_PROD_URL } = process.env;
 
 const Index = ({ orders, products }) => {
   const [cakeList, setCakeList] = useState(products);
@@ -13,7 +13,7 @@ const Index = ({ orders, products }) => {
     console.log(id);
     try {
       const res = await axios.delete(
-        `${REACT_APP_API_ENDPOINT}/api/products/` + id
+        `${REACT_APP_PROD_URL}/api/products/` + id
       );
       setCakeList(cakeList.filter((cake) => cake._id !== id));
     } catch (err) {
@@ -26,7 +26,7 @@ const Index = ({ orders, products }) => {
     const currentStatus = item.status;
 
     try {
-      const res = await axios.put(`${REACT_APP_API_ENDPOINT}/api/orders/` + id, {
+      const res = await axios.put(`${REACT_APP_PROD_URL}/api/orders/` + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -130,8 +130,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get(`${REACT_APP_API_ENDPOINT}/api/products`);
-  const orderRes = await axios.get(`${REACT_APP_API_ENDPOINT}/api/orders`);
+  const productRes = await axios.get(`${REACT_APP_PROD_URL}/api/products`);
+  const orderRes = await axios.get(`${REACT_APP_PROD_URL}/api/orders`);
 
   return {
     props: {
